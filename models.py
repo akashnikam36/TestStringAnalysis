@@ -19,10 +19,28 @@ class StringAnalysisResponse(BaseModel):
     ) 
 
 class UserRegister(BaseModel):
-    username: str
-    password: str
+    """
+    Model for user registration request.
+    Contains username and password for creating a new account.
+    """
+    username: str = Field(min_length=3, max_length=50, description="Username (3-50 characters)")
+    password: str = Field(min_length=2, description="Password (minimum 2 characters)")
 
 
 class UserLogin(BaseModel):
     username: str
     password: str
+
+
+class Token(BaseModel):
+    access_token: str = Field(description="JWT access token")
+    token_type: str = Field(default="bearer", description="Token type (always 'bearer')")
+
+
+class UserResponse(BaseModel):
+    id: int = Field(description="User ID")
+    username: str = Field(description="Username")
+    
+    class Config:
+        # This allows Pydantic to work with SQLAlchemy models
+        from_attributes = True

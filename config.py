@@ -19,3 +19,11 @@ class Settings(BaseSettings):
     
     # CORS Configuration (configure properly for production)
     CORS_ORIGINS: list = ["*"]
+
+    # Database Configuration
+    DATABASE_URL: str = "sqlite:///./app.db" 
+    
+    # JWT Authentication Configuration
+    SECRET_KEY: str = "secretekeyforanalysis" 
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30  

@@ -1,0 +1,14 @@
+# FastAPI and web server dependencies
+fastapi==0.121.0
+uvicorn[standard]==0.38.0
+pydantic==2.12.3
+pydantic-settings==2.11.0
+SQLAlchemy==2.0.44
+
+# Additional utilities
+python-multipart==0.0.6
+
+# Development and testing (optional, but recommended)
+pytest==7.4.3
+httpx==0.25.2
+
